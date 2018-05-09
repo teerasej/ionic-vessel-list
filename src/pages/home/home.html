@@ -16,8 +16,15 @@
   <button ion-button block (click)="loadData(vesselName)">Load</button>
 
   <ion-list>
-    <ion-item *ngFor="let ship of vessels">
-       {{ ship }}
+    <ion-item *ngFor="let ship of vessels" no-lines>
+       <ion-card>
+         <ion-card-header>
+           {{ ship.Name }}
+         </ion-card-header>
+         <ion-card-content>
+           {{ ship.Country_ID }}
+         </ion-card-content>
+       </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>
