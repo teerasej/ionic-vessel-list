@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +16,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddNewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddNewPage');
+  }
+
+  public save(vesselName, countryID) {
+    let data = {
+      Name: vesselName
+      , Country_ID: countryID
+    };
+
+    let url = "http://localhost:8888/app-admin/api/fishingvessel/create";
+
+    this.http.post(url, data)
+      .subscribe(
+        (result:any) => {
+          alert('insert_id: ' + result.insert_id);
+          this.navCtrl.pop();
+        }
+      );
+  }
+
+  public cancel() {
+    this.navCtrl.pop();
   }
 
 }
