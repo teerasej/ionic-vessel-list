@@ -15,12 +15,9 @@ export class HomePage {
     
   }
 
-  public loadData(vesselName){
-    // this.vessels.push(vesselName);
-    // this.vesselName = "";
-
+  public ionViewWillEnter()
+  {
     let url = "http://localhost:8888/app/index.php/api/fishingvessel/all_ship";
-
 
     this.http.get(url)
              .subscribe(
@@ -29,6 +26,13 @@ export class HomePage {
                  this.vessels = result;
                }
              );
+  }
+
+  public loadData(vesselName){
+    // this.vessels.push(vesselName);
+    // this.vesselName = "";
+
+    
 
   }
   
