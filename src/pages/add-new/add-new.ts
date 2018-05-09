@@ -16,11 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddNewPage {
 
+  countryArray = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddNewPage');
+
+    let url = "";
+
+
+    this.http.get(url)
+              .subscribe(
+                (result:any) => {
+                  this.countryArray = result;
+                }
+              )
   }
 
   public save(vesselName, countryID) {
