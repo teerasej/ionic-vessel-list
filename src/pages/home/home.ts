@@ -20,7 +20,7 @@ export class HomePage {
     // this.vessels.push(vesselName);
     // this.vesselName = "";
 
-    let url = "http://localhost:8888/app/index.php/api/fishingvessel/all_ship";
+    let url = "http://localhost:8888/app-admin/api/fishingvessel/all_ship";
 
 
     this.http.get(url)
