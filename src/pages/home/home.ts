@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { AddNewPage } from '../add-new/add-new';
 
 @Component({
   selector: 'page-home',
@@ -30,6 +31,11 @@ export class HomePage {
                }
              );
 
+  }
+
+  public openNewVesselForm()
+  {
+    this.navCtrl.push(AddNewPage);
   }
   
 
