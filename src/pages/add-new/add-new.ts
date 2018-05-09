@@ -24,7 +24,7 @@ export class AddNewPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddNewPage');
 
-    let url = "";
+    let url = "http://localhost:8888/app-admin/api/country/get_all";
 
 
     this.http.get(url)
