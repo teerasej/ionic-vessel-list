@@ -37,6 +37,31 @@ export class AddNewPage {
 
   public add(vesselName, countryID) {
 
+    let data = {
+      Name: vesselName,
+      Country_ID: countryID
+    };
+
+    console.log('ข้อมูลที่จะส่งไปให้ Web API:')
+    console.log(data);
+
+    let url = "http://localhost:8888/app/index.php/api/fishingvessel/create";
+
+    this.http.post(url, data)
+             .subscribe(
+               (result:any) => {
+                 console.log('ข้อมูลที่ส่งกลับมาจาก web api');
+                 console.log(result);
+
+                 if(result.result_info == true){
+                   this.navCtrl.pop();
+                 } 
+                 else {
+                   alert('ไม่สามารถเพิ่มข้อมูลได้ ลองใหม่อีกครั้ง');
+                 }
+               }
+             );
+
   }
 
   public cancel() {
