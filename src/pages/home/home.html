@@ -14,14 +14,14 @@
 </ion-header>
 
 <ion-content padding>
- 
+<!--  
   <ion-item>
     <ion-label stacked>ชื่อเรือ</ion-label>
     <ion-input type="text" [(ngModel)]="vesselName" ></ion-input>
   </ion-item>
   
-  <button ion-button block (click)="loadData(vesselName)">Load</button>
-
+  <button ion-button block (click)="loadData(vesselName)">Load</button> -->
+    
   <ion-list>
     <ion-item *ngFor="let ship of vessels">
        <h2>{{ ship.Name }}</h2>
