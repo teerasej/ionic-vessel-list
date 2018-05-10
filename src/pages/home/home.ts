@@ -31,6 +31,12 @@ export class HomePage {
              );
 
   }
+
+  public openNewVesselPage()
+  {
+    
+    this.navCtrl.push('AddNewPage');
+  }
   
 
 }
