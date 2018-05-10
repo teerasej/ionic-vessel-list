@@ -27,7 +27,7 @@ export class AddNewPage {
   }
 
   public cancel() {
-
+    this.navCtrl.pop();
   }
 
 }
