@@ -16,7 +16,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>ชื่อเรือ</ion-label>
-    <ion-input type="text" ></ion-input>
+    <ion-input type="text" [(ngModel)]="vesselName"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -26,8 +26,8 @@
     </ion-select>
   </ion-item>
 
-  <button ion-button block >เพิ่ม</button>
-  <button ion-button block >ยกเลิก</button>
+  <button ion-button block (click)="add(vesselName, countryID)">เพิ่ม</button>
+  <button ion-button block (click)="cancel()">ยกเลิก</button>
 
 
 </ion-content>

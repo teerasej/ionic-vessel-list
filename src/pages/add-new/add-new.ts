@@ -22,4 +22,12 @@ export class AddNewPage {
     console.log('ionViewDidLoad AddNewPage');
   }
 
+  public add(vesselName, countryID) {
+
+  }
+
+  public cancel() {
+
+  }
+
 }
