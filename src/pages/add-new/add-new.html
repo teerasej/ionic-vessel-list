@@ -22,7 +22,11 @@
   <ion-item>
     <ion-label>ประเทศ</ion-label>
     <ion-select [(ngModel)]="countryID">
-      <ion-option value="" ></ion-option>
+      <ion-option 
+          *ngFor="let country of countryArray" 
+          value="{{ country.id }}">
+          {{ country.Name }}
+      </ion-option>
     </ion-select>
   </ion-item>
 
